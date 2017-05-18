@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping> 
+    <class name="com.vo.User" table="user" catalog="netdisk">
+       <id name="uid" column="uid"><generator class="native"></generator></id>
+       <property name="username" column="username"></property>
+       <property name="password" column="password"></property>
+       <property name="sex" column="sex"></property>
+       <property name="phone" column="phone"></property>
+       <property name="email" column="email"></property>
+       <property name="last_login_date" column="last_login_date"></property>
+    </class>
+</hibernate-mapping>
