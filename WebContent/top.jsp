@@ -23,12 +23,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     $(document).ready(function(){
     
         $("#upload").click(function(){
-            top.location.href = "upload.jsp";
+            top.location.href = "select.jsp";
             
         });
         $("#upload").mouseenter(function(){
             $(this).css("cursor","pointer");
         });
+        
+        $("#search").mouseenter(function(){
+        	
+        	$(this).css("cursor","pointer");
+        });
+        
+        $("#search").click(function(){
+        	var keyValue = $("#keyValue").val();
+        	alert(keyValue);
+        	var xmlhttp;
+        	if (window.XMLHttpRequest)
+        	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+        	  xmlhttp=new XMLHttpRequest();
+        	  }
+        	else
+        	  {// code for IE6, IE5
+        	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        	  }
+        	xmlhttp.onreadystatechange=function()
+        	  {
+        	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        	    {
+        	    $("#keyValue").val(xmlhttp.responseText);
+        	    
+        	    }
+        	  }
+        	var uri = "search?keyValue="+keyValue;
+        	xmlhttp.open("GET",uri,true);
+        	xmlhttp.send();
+        });
+        
     });
         
     </script>
@@ -39,8 +70,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <label style="line-height: 70px;font-size: 30px; margin-right: 30px;" >百度云网盘</label>
        <lable style="line-height: 70px;font-size: 30px;margin-right: 30px;">网盘</lable>
        <lable style="line-height: 70px;font-size: 30px;margin-right: 30px;" id="upload" >上传</lable>
-       <input style="line-height: 30px;font-size: 30px;margin-right: 30px;margin-left: 30px;" type="text"/>
-       <lable style="line-height: 70px;font-size: 30px;margin-right: 30px;">搜索</lable>
+       <input style="line-height: 30px;font-size: 30px;margin-right: 30px;margin-left: 30px;" id="keyValue" type="text"/>
+       <lable style="line-height: 70px;font-size: 30px;margin-right: 30px;" id="search">搜索</lable>
    </div>
   </body>
 </html>

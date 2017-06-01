@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <table>
          <tr><td class="checkbox"><input type="checkbox"></td><td class="filename"><lable><a href="">视频</a></lable></td><td class="filedate">filedate</td></tr>
          <tr><td class="checkbox"><input type="checkbox"></td><td class="filename"><lable><a href="">音乐</a></lable></td><td class="filedate">filedate</td></tr>
-         <tr><td class="checkbox"><input type="checkbox"></td><td class="filename"><lable><a href="showImage">图片</a></lable></td><td class="filedate">filedate</td></tr>
+         <tr><td class="checkbox"><input type="checkbox"></td><td class="filename"><lable><a href="showPicture">图片</a></lable></td><td class="filedate">filedate</td></tr>
        </table>
     </div>
   </body>

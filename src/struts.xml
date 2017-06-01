@@ -4,15 +4,19 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    
+    <constant name="struts.multipart.maxSize" value="5500000000"/>
     <package name="default" namespace="/" extends="struts-default">
         <action name="login"  class="loginAction" >
            <result name="input">/login.jsp</result>
            <result name="success">/main.jsp</result>
         </action>
         
-        <action name="upload" class="uploadAction">
-            <result name="success">/main.jsp</result>
+        
+        <action name="search" class="searchAction" method="search">
+        </action>
+        
+        <action name="showPicture" class="showPicturehAction">
+            <result name="success">/showPicture.jsp</result>
         </action>
     </package>
 
